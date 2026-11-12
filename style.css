@@ -1,0 +1,103 @@
+:root {
+  --ink: #302d29;
+  --muted: #716b60;
+  --gold: #b58b2a;
+  --gold-light: #ead9a6;
+  --cream: #fffdf8;
+  --paper: #ffffff;
+  --line: #ded6c5;
+  --shadow: 0 12px 32px rgba(69, 54, 24, .08);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--ink); background: #f8f5ed;
+  font-family: Arial, Helvetica, sans-serif; line-height: 1.65;
+}
+a { color: #806019; }
+a:hover, a:focus { color: #4e3a0d; }
+.site-shell { width: min(1100px, calc(100% - 32px)); margin: 28px auto; }
+.topline { height: 5px; background: #b58b2a; margin: 0 0 10px; }
+.topline.second { height: 2px; background: #4d7772; margin-bottom: 8px; }
+.topline.third { height: 7px; background: #b96f68; margin-bottom: 22px; }
+header {
+  background: var(--paper); border: 1px solid var(--line);
+  box-shadow: var(--shadow); padding: 24px clamp(18px, 4vw, 48px);
+}
+.brand {
+  margin: 0; color: #b3262d; text-align: center; font: italic 700 clamp(2rem, 5vw, 3.2rem)/1.2 Georgia, serif;
+  letter-spacing: .035em;
+}
+.tagline { text-align: center; color: var(--muted); margin: 8px 0 0; }
+nav {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  padding: 18px 0;
+}
+nav a {
+  text-decoration: none; font-weight: 700; padding: 9px 16px;
+  background: #fff; border: 1px solid var(--line); border-radius: 999px;
+}
+nav a[aria-current="page"] { background: #f2e7c9; border-color: #c9a64d; }
+main {
+  background: var(--paper); padding: clamp(20px, 4vw, 42px);
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+h2, h3 { font-family: Georgia, "Times New Roman", serif; }
+h2 { margin-top: 0; color: #76591c; }
+.intro-card {
+  border: 1px solid #d7c99f; padding: 22px; background: #fffefa;
+  overflow: auto; border-radius: 8px;
+}
+.logo {
+  float: left; width: min(700px, 100%); height: auto; aspect-ratio: 7 / 2;
+  object-fit: contain; border: 6px solid #f2d34f; margin: 4px 22px 14px 0;
+  background: #fffdf8;
+}
+.description { text-align: justify; }
+.description .gold { color: #9a741e; font-size: 1.12rem; }
+.description .rose { color: #9a4c54; font-size: .95rem; }
+.square-list { list-style-type: square; padding-left: 24px; }
+.calculation {
+  width: min(520px, 100%); margin: 28px auto; padding: 18px 24px;
+  border: 1px solid #b9a36a; background: #fffdf6; border-radius: 6px;
+}
+.calculation li { padding: 3px 0; }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+.menu-card {
+  display: block; text-decoration: none; color: inherit; padding: 22px;
+  border: 1px solid var(--line); border-radius: 10px; background: #fffdf8;
+}
+.menu-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.menu-card strong { display: block; color: #806019; font: 700 1.25rem Georgia, serif; }
+table { width: 100%; border-collapse: collapse; margin: 18px 0; }
+th, td { border: 1px solid #cfc5ad; padding: 12px; text-align: left; }
+th { background: #f2e7c9; }
+tbody tr:nth-child(even) { background: #fffaf0; }
+form { max-width: 680px; }
+label { display: block; font-weight: 700; margin: 14px 0 5px; }
+input, select, textarea {
+  width: 100%; padding: 11px 12px; border: 1px solid #c9bea7; border-radius: 6px;
+  font: inherit; background: #fffefa;
+}
+textarea { min-height: 120px; resize: vertical; }
+button, .button {
+  display: inline-block; border: 0; border-radius: 999px; padding: 11px 22px;
+  background: #9b782c; color: white; font-weight: 700; text-decoration: none; cursor: pointer;
+}
+button:hover, .button:hover { background: #755719; color: white; }
+.note { padding: 14px 18px; background: #f8f1df; border-left: 4px solid #c9a64d; }
+footer { text-align: center; color: var(--muted); padding: 18px 8px; font-size: .92rem; }
+footer a { margin: 0 8px; }
+@media (max-width: 650px) {
+  .site-shell { width: min(100% - 18px, 1100px); margin: 10px auto; }
+  .logo { float: none; display: block; margin: 0 auto 18px; width: 100%; }
+  nav { gap: 7px; }
+  nav a { padding: 8px 12px; }
+  th, td { padding: 8px; font-size: .92rem; }
+}
+
+/* Delikatnie różne kolory tła podstron – zgodnie z wymaganiami zadania. */
+body.menu-page { background: #f0f5f7; }
+body.form-page { background: #fbf0f1; }
+body.table-page { background: #f3f0f8; }
+body.mail-page { background: #eff5ef; }
